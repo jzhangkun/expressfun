@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  
+  div#container
+    div.simpleForm
+      p 
+        label(for="twitter_handle") Twitter handle:
+        input#twitter_handle(type="text")
+      p 
+        label(for="movie_seen") Name a movie you've seen this year:
+        input#movie_seen(type="text")
+      p
+        label(for="movie_rating") Rate the movie you saw:
+        select#movie_rating
+          each seq in [ 1, 2, 3, 4]
+            option(value= seq)= seq
+          option(value=5 selected) 5
+      p
+        button#add Submit rating
+     
+    div.summaryTable
+      div#users
+        h3 Recent users
+      div#ratings
+        h3 Recent movies rated
+
